@@ -7,4 +7,23 @@
 #islandora-pretty-text-diff-diff del {
     background-color: rgb(232, 96, 96);
     background-color: rgba(232, 96, 96, 0.50);
+    text-decoration: none;
 }
+
+#islandora-pretty-text-diff-second, #islandora-pretty-text-diff-first {
+    font-size: smaller;
+}
+
+#islandora-pretty-text-diff-first {
+    color: rgb(200,16,16);
+    float: left;
+    width: 50%;
+}
+
+#islandora-pretty-text-diff-second {
+    color: rgb(0,200,16);
+    float: right;
+    width: 50%;
+}
+
+

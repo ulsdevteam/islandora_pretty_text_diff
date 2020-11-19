@@ -185,23 +185,24 @@ function islandora_pretty_text_diff_content($content1, $content2) {
   drupal_add_css($module_path . '/css/pretty_text_diff.css');
 
   $output = array(
-    'first' => array(
-      '#type' => 'markup',
-      '#markup' => $content1,
-      '#prefix' => '<div id="islandora-pretty-text-diff-first" style="display:none;">',
-      '#suffix' => '</div>',
-    ),
-    'second' => array(
-      '#type' => 'markup',
-      '#markup' => $content2,
-      '#prefix' => '<div id="islandora-pretty-text-diff-second" style="display:none;">',
-      '#suffix' => '</div>',
-    ),
     'diff' => array(
       '#type' => 'markup',
       '#markup' => '',
       '#prefix' => '<pre><div id="islandora-pretty-text-diff-diff">',
       '#suffix' => '</div></pre>',
+    ),
+    'first' => array(
+      '#type' => 'markup',
+      '#markup' => $content1,
+      '#prefix' => '<div><div style="width:50%;float:left;padding:0;margin:0"><h3>first</h3></div><div style="width:50%;float:left;padding:0;margin:0"><h3>second</h3></div></div>' .
+                   '<div style="overflow-y:scroll;height:700px"><pre id="islandora-pretty-text-diff-first">', // display:none
+      '#suffix' => '</pre>',
+    ),
+    'second' => array(
+      '#type' => 'markup',
+      '#markup' => $content2,
+      '#prefix' => '<pre id="islandora-pretty-text-diff-second">', // display:none
+      '#suffix' => '</pre></div>',
     ),
   );
   return $output;
